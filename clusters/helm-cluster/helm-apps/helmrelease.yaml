@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helmapp
+  namespace: flux-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: appchart
+      sourceRef:
+        kind: HelmChart
+        name: helmapp
+      valuesFiles:
+        - values.yaml

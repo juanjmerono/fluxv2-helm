@@ -9,5 +9,3 @@ spec:
     name: flux-system
     kind: GitRepository
   interval: 10m
-  valuesFiles:
-    - ./charts/appchart/values.yaml
