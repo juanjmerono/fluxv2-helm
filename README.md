@@ -8,6 +8,10 @@
 
         `kubectl get secret -n flux-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > master.key`
 
+    * Hacer copias o recuperar los GITLAB_USER/TOKEN usados para desplegar originalmente.
+
+        `kubectl get secret -n flux-system flux-system -o yaml > gitlab.key`
+
 * Desconecta todos los elementos de flux para que no afecte desinstalar
 
     `flux get ks`
@@ -38,6 +42,10 @@
 
     `flux uninstall --crds`
 
-    * Desplegar la master.key en el nuevo targetNamespace de SealedSecrets.
-    * Cambiar el targetNamespace de la HelmRelease de SealedSecrets y reconciliar.
-    * No cambia nada porque no hay cambio en la HelmRelease??
+* Descarga el nuevo cliente y renombra el viejo como flux063
+* Instala flux vas a necesitar el gitlab user/token que usabas
+
+    `flux bootstrap .....`
+
+* Despliega la master.key en el nuevo flux-system
+* Copia elementos del flux-system y de la vieja carpeta a la nueva
