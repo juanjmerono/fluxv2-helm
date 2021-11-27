@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:k8s-img-policy"}
+        image: docker.io/ealen/echo-server:0.5.1 # {"$imagepolicy": "flux-system:k8s-img-policy"}
         ports:
         - containerPort: 80
         env:
-          - name: K8S_APP
-            value: demoappNEW
-          - name: MI_SECRETO
-            valueFrom:
-              secretKeyRef:
-                name: secret
-                key: secreto
+        - name: K8S_APP
+          value: demoappNEW
+        - name: MI_SECRETO
+          valueFrom:
+            secretKeyRef:
+              name: secret
+              key: secreto
