@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmChart
+metadata:
+  name: helmapp
+  namespace: default
+spec:
+  chart: ./charts/appchart
+  sourceRef:
+    name: flux-system
+    kind: GitRepository
+  interval: 10m
+  valuesFiles:
+    - ./charts/appchart/values.yaml

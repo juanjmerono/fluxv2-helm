@@ -1,0 +1,3 @@
+mychart:
+  demoValue: 123
+  demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:demo-policy"}
