@@ -18,5 +18,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: DEMO_VALUE
-          value: {{ .Values.demoValue }}
+          {{- range .Values.environment }}
+          - name: {{ .name }}
+            value: {{ .value }}
+          {{- end }}
