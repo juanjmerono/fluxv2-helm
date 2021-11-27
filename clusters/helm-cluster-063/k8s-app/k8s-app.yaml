@@ -18,6 +18,7 @@ apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
 metadata:
   name: k8s-img-repo
+  namespace: flux-system
 spec:
   image: docker.io/ealen/echo-server
   interval: 1m0s
@@ -26,6 +27,7 @@ apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
   name: k8s-img-policy
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: k8s-img-repo
