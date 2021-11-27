@@ -2552,7 +2552,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller/
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
@@ -2623,7 +2623,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller/
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
@@ -2694,7 +2694,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller/
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
@@ -2769,7 +2769,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller/
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
@@ -2841,7 +2841,7 @@ spec:
     spec:
       containers:
       - args:
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
@@ -2916,7 +2916,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller/
-        - --watch-all-namespaces=true
+        - --watch-all-namespaces=false
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
