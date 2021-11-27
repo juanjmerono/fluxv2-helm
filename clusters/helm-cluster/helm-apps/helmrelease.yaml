@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: ./charts/appchart
+      version: 0.1.0
       sourceRef:
         name: flux-system
         kind: GitRepository
