@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/ealen/echo-server:0.4.3
+        image: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:k8s-img-policy"}
         ports:
         - containerPort: 80
         env:

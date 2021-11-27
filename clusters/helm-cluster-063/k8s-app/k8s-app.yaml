@@ -13,3 +13,24 @@ spec:
     name: flux-system
   timeout: 3m0s
   validation: client
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: k8s-img-repo
+spec:
+  image: docker.io/ealen/echo-server
+  interval: 1m0s
+  secretRef:
+    name: gitlab-registry
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: k8s-img-policy
+spec:
+  imageRepositoryRef:
+    name: k8s-img-repo
+  policy:
+    semver:
+      range: '>=0.0.0 <2.0.0'
