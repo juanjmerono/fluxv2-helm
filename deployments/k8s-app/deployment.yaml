@@ -19,4 +19,4 @@ spec:
         - containerPort: 80
         env:
           - name: K8S_APP
-            value: demoapp
+            value: demoappNEW
