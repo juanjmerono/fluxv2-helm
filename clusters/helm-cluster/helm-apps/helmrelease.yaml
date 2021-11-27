@@ -14,4 +14,4 @@ spec:
         kind: GitRepository
         name: flux-system
       valuesFiles:
-        - values.yaml
+        - ./charts/appchart/values.yaml
