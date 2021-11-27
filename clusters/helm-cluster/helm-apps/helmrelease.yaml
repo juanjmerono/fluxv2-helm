@@ -7,9 +7,9 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: appchart
+      chart: ./charts/appchart
       sourceRef:
-        kind: HelmChart
-        name: helmapp
+        name: flux-system
+        kind: GitRepository
       valuesFiles:
         - values.yaml
