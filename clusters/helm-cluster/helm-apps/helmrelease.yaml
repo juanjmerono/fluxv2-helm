@@ -8,9 +8,10 @@ spec:
   chart:
     spec:
       chart: ./charts/appchart
-      version: 0.1.0
+      version: 0.1.x
       sourceRef:
-        name: flux-system
+        namespace: flux-system
         kind: GitRepository
+        name: appchart
       valuesFiles:
         - values.yaml
