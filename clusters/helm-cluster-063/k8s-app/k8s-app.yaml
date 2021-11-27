@@ -21,8 +21,6 @@ metadata:
 spec:
   image: docker.io/ealen/echo-server
   interval: 1m0s
-  secretRef:
-    name: gitlab-registry
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
