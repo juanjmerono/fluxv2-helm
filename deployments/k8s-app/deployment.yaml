@@ -20,3 +20,8 @@ spec:
         env:
           - name: K8S_APP
             value: demoappNEW
+          - name: MI_SECRETO
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: secreto

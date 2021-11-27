@@ -7,8 +7,12 @@ resources:
 - namespace.yaml
 - deployment.yaml
 - service.yaml
+- secret.yaml
 
 namespace: k8s-ns-desa
 
 namePrefix: k8s-
 nameSuffix: -desa
+
+configurations:
+- kustomization-config.yaml

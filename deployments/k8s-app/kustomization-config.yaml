@@ -1,0 +1,14 @@
+# References between Deployment/Ingress and SealedSecrets
+nameReference:
+- kind: SealedSecret
+  version: v1alpha1
+  group: bitnami.com
+  fieldSpecs:
+  - path: spec/template/metadata/name
+    version: v1alpha1
+    group: bitnami.com
+    kind: SealedSecret
+  - path: spec/template/spec/containers/env/valueFrom/secretKeyRef/name
+    version: v1
+    group: apps
+    kind: Deployment
