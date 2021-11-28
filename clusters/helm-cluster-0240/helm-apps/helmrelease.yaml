@@ -8,13 +8,11 @@ spec:
   targetNamespace: helm-ns-desa
   chart:
     spec:
-      chart: ./charts/appchart
-      version: 0.5.1 # {"$imagepolicy": "flux-system:helm-img-policy-desa:tag"}
+      chart: ./charts/appchart/desa
+      version: 0.4.0 # {"$imagepolicy": "flux-system:helm-img-policy-desa:tag"}
       sourceRef:
         kind: GitRepository
         name: flux-system
-      valuesFiles:
-        - ./charts/appchart/values.yaml
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -26,13 +24,11 @@ spec:
   targetNamespace: helm-ns-prod
   chart:
     spec:
-      chart: ./charts/appchart
-      version: 0.5.1 # {"$imagepolicy": "flux-system:helm-img-policy-prod:tag"}
+      chart: ./charts/appchart/prod
+      version: 0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-prod:tag"}
       sourceRef:
         kind: GitRepository
         name: flux-system
-      valuesFiles:
-        - ./charts/appchart/values_prod.yaml
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
@@ -53,7 +49,7 @@ spec:
     name: helm-img-repo
   policy:
     semver:
-      range: 0.5.x
+      range: 0.4.x
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
@@ -65,4 +61,4 @@ spec:
     name: helm-img-repo
   policy:
     semver:
-      range: 0.5.x
+      range: 0.4.x
