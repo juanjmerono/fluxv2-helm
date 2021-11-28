@@ -10,3 +10,5 @@ mychart:
   demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-desa"}
   prefixName: helm-
   suffixName: -desa
+
+testing: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-desa"}
