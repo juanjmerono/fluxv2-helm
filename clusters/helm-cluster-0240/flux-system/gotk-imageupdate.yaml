@@ -23,10 +23,6 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 1m0s
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
   git:
     checkout:
       ref:
@@ -35,9 +31,13 @@ spec:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
-      messageTemplate: '[ci skip] update image'
+      messageTemplate: '[skip ci] Update docker image'
     push:
       branch: main
-  # update:
-  #   path: ./clusters/my-cluster
-  #   strategy: Setters
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  update:
+    path: ./deployments
+    strategy: Setters

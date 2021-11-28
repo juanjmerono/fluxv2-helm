@@ -8,6 +8,8 @@
 
         `kubectl get secret -n flux-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > master.key`
 
+        `openssl x509 -enddate -noout -in /path/to/tls.crt`
+
     * Hacer copias o recuperar los GITLAB_USER/TOKEN usados para desplegar originalmente.
 
         `kubectl get secret -n flux-system flux-system -o yaml > gitlab.key`
