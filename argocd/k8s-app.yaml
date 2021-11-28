@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myalias=docker.io/ealen/echo-server
+    argocd-image-updater.argoproj.io/myalias.force-update: '"true"'
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+  name: k8s-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: k8s-ns-desa
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: deployments/k8s-app
+    repoURL: 'https://github.com/juanjmerono/fluxv2-helm'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
