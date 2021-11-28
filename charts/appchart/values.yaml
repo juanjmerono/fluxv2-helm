@@ -1,5 +1,7 @@
 mychart:
   environment:
+    - name: OTRADEMO_VAR
+      value: adios
     - name: DEMO_VAR
       value: hola
     - name: MI_SECRETO
