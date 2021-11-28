@@ -33,4 +33,4 @@ spec:
     name: k8s-img-repo
   policy:
     semver:
-      range: '>=0.0.0 <0.4.3'
+      range: '>=0.0.0 <0.5.0'
