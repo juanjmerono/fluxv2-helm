@@ -11,4 +11,4 @@ mychart:
           key: secreto
   prefixName: helm-
   suffixName: -desa
-  demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-desa"}
+  demoImage: docker.io/ealen/echo-server:0.5.1 # {"$imagepolicy": "flux-system:helm-img-policy-desa"}
