@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: k8s-ns-desa
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: myprojects
   source:
     path: deployments/k8s-app
     repoURL: 'https://github.com/juanjmerono/fluxv2-helm'
