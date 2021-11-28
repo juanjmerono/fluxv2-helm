@@ -7,6 +7,6 @@ mychart:
         secretKeyRef:
           name: helm-secret-prod
           key: secreto
-  demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-policy"}
+  demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy"}
   prefixName: helm-
   suffixName: -prod  
