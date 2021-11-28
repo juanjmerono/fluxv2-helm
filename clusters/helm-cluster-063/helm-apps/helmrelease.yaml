@@ -47,7 +47,7 @@ spec:
     name: helm-img-repo
   policy:
     semver:
-      range: 0.4.x
+      range: 0.5.x
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
