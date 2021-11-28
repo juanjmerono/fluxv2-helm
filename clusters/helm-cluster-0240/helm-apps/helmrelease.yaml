@@ -10,6 +10,7 @@ spec:
   chart:
     spec:
       chart: ./charts/appchart
+      version: 0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-desa:tag"}
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -30,6 +31,7 @@ spec:
   chart:
     spec:
       chart: ./charts/appchart
+      version: 0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-prod:tag"}
       sourceRef:
         kind: GitRepository
         name: flux-system
