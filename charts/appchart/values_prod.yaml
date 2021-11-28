@@ -3,3 +3,5 @@ mychart:
     - name: DEMO_VAR
       value: prodvalue
   demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-policy"}
+  prefixName: helm-
+  suffixName: -prod  

@@ -1,23 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helm-app
+  name: {{ .Values.prefixName }}app{{ .Values.suffixName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helm-app
+      app: app
   template:
     metadata:
       labels:
-        app: helm-app
+        app: app
     spec:
       containers:
-      - name: helm-app
+      - name: app
         image: {{ .Values.demoImage }}
         ports:
         - containerPort: 80
         env:
+          - name: MI_SECRETO
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.prefixName }}secret{{ .Values.suffixName }}
+                key: secreto
           {{- range .Values.environment }}
           - name: {{ .name }}
             value: {{ .value }}

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: helm-svc
+  name: {{ .Values.prefixName }}svc{{ .Values.suffixName }}
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: helm-app
+    app: app
