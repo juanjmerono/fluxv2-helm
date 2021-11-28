@@ -54,3 +54,15 @@ spec:
   policy:
     semver:
       range: 0.5.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: helm-img-policy-desa
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: helm-img-repo
+  policy:
+    semver:
+      range: 0.5.x
