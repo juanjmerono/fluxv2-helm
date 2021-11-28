@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.prefixName }}app{{ .Values.suffixName }}
+  namespace: {{ .Values.prefixName }}ns{{ .Values.suffixName }}
 spec:
   replicas: 1
   selector:
@@ -13,17 +14,11 @@ spec:
         app: app
     spec:
       containers:
-      - name: app
-        image: {{ .Values.demoImage }}
-        ports:
-        - containerPort: 80
-        env:
-          - name: MI_SECRETO
-            valueFrom:
-              secretKeyRef:
-                name: {{ .Values.prefixName }}secret{{ .Values.suffixName }}
-                key: secreto
-          {{- range .Values.environment }}
-          - name: {{ .name }}
-            value: {{ .value }}
+        - name: app
+          image: {{ .Values.demoImage }}
+          ports:
+            - containerPort: 80
+          {{- with .Values.environment }}
+          env:
+            {{- toYaml . | nindent 12 }}
           {{- end }}

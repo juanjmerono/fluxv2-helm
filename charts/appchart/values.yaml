@@ -2,6 +2,11 @@ mychart:
   environment: 
     - name: DEMO_VAR
       value: hola
+    - name: MI_SECRETO
+      valueFrom:
+        secretKeyRef:
+          name: helm-secret-desa
+          key: secreto
   demoImage: docker.io/ealen/echo-server:0.4.3 # {"$imagepolicy": "flux-system:helm-policy"}
   prefixName: helm-
   suffixName: -desa
