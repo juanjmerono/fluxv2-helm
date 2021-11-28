@@ -1,5 +1,7 @@
 mychart:
   environment:
+    - name: OTHER_VAR
+      value: desavalue
     - name: DEMO_VAR
       value: desavalue
     - name: MI_SECRETO
