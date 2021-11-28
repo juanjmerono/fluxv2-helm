@@ -1,9 +1,7 @@
 mychart:
   environment:
-    - name: OTRADEMO_VAR
-      value: adios
     - name: DEMO_VAR
-      value: hola
+      value: desavalue
     - name: MI_SECRETO
       valueFrom:
         secretKeyRef:
