@@ -1,0 +1,64 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helmapp-desa
+  namespace: flux-system
+spec:
+  interval: 5m
+  targetNamespace: helm-ns-desa
+  chart:
+    spec:
+      chart: ./charts/appchart/desa
+      version: 0.5.1 # {"$imagepolicy": "flux-system:helm-img-policy-desa:tag"}
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helmapp-prod
+  namespace: flux-system
+spec:
+  interval: 5m
+  targetNamespace: helm-ns-prod
+  chart:
+    spec:
+      chart: ./charts/appchart/prod
+      version: 0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-prod:tag"}
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: helm-img-repo
+  namespace: flux-system
+spec:
+  image: docker.io/ealen/echo-server
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: helm-img-policy-prod
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: helm-img-repo
+  policy:
+    semver:
+      range: 0.4.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: helm-img-policy-desa
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: helm-img-repo
+  policy:
+    semver:
+      range: 0.5.x
