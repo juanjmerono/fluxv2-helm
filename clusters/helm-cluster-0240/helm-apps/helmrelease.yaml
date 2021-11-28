@@ -61,4 +61,4 @@ spec:
     name: helm-img-repo
   policy:
     semver:
-      range: 0.4.x
+      range: 0.5.x
