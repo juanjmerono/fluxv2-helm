@@ -20,7 +20,7 @@ version: 0.4.3 # {"$imagepolicy": "flux-system:helm-img-policy-prod:tag"}
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
 dependencies:
-  - name: mychart
-    version: 0.1.0
-    enabled: true
-    repository: file://../../mychart
+- name: mychart
+  version: 0.1.0
+  enabled: true
+  repository: file://../../mychart

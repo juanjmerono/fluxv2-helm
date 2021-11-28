@@ -1,14 +1,14 @@
 mychart:
   environment:
-    - name: OTHER_VAR
-      value: desavalue
-    - name: DEMO_VAR
-      value: desavalue
-    - name: MI_SECRETO
-      valueFrom:
-        secretKeyRef:
-          name: helm-secret-desa
-          key: secreto
+  - name: OTHER_VAR
+    value: desavalue
+  - name: DEMO_VAR
+    value: desavalue
+  - name: MI_SECRETO
+    valueFrom:
+      secretKeyRef:
+        name: helm-secret-desa
+        key: secreto
   prefixName: helm-
   suffixName: -desa
   demoImage: docker.io/ealen/echo-server:0.5.1 # {"$imagepolicy": "flux-system:helm-img-policy-desa"}
