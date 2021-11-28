@@ -49,3 +49,12 @@
         Kustomization: v1beta2
         ImageUpdateAutomation: v1beta1
     * Son cambios mínimos en el primero y algo más delicados en el segundo caso
+
+## Alternativa añadir helm en 0.6.3
+
+* Creamos un nuevo repositorio para los HelmCharts
+
+    * Se crea un Chart BASE para API o UI parametrizado.
+    * Se crea un Chart específico para cada despliegue que se haga
+    * Se añade al repositorio de despliegue la helmrelease
+
