@@ -1,0 +1,36 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: ks
+  namespace: flux-system
+spec:
+  path: ./deployments/k8s-app
+  interval: 10m0s
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  timeout: 3m0s
+  validation: client
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: k8s-img-repo
+  namespace: flux-system
+spec:
+  image: docker.io/ealen/echo-server
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: k8s-img-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: k8s-img-repo
+  policy:
+    semver:
+      range: '>=0.0.0 <0.4.3'
