@@ -1,0 +1,26 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmChart
+metadata:
+  name: flux-system-helmapp-desa
+  namespace: flux-system
+spec:
+  chart: ./charts/appchart
+  interval: 5m0s
+  reconcileStrategy: Revision
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmChart
+metadata:
+  name: flux-system-helmapp-prod
+  namespace: flux-system
+spec:
+  chart: ./charts/appchart
+  interval: 5m0s
+  reconcileStrategy: Revision
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
