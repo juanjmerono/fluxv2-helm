@@ -5,3 +5,11 @@ metadata:
   namespace: argocd
 spec:
   description: General Projects
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'
