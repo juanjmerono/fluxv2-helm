@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 - project.yaml
 - k8s-app.yaml
+- helm-app.yaml
 
 
