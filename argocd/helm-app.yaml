@@ -5,6 +5,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: myalias=docker.io/ealen/echo-server
     argocd-image-updater.argoproj.io/myalias.force-update: 'true'
     argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/myalias.helm.image-spec: mychart.demoImage
   name: helm-app
   namespace: argocd
 spec:
