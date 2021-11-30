@@ -20,3 +20,11 @@ endpoints:
 
 apigateway:
   url: "http://api.umes"
+
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
+        serviceLabels:
+          app: apisvc
